@@ -174,7 +174,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Telephony
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.telephony.default_network=9,9,9,9
+    ro.telephony.default_network=10,10,10,10
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \

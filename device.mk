@@ -94,6 +94,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtinyxml
 
+# Verity
+PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/bootdevice/by-name/system
+PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/platform/bootdevice/by-name/vendor
+$(call inherit-product, build/target/product/verity.mk)
+
 # VNDK
 PRODUCT_EXTRA_VNDK_VERSIONS := 29
 PRODUCT_TARGET_VNDK_VERSION := 29

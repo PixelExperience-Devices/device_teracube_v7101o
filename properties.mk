@@ -86,6 +86,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.md_auto_setup_ims=1 \
     persist.vendor.mtk_ct_volte_support=1
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1
+
 # Keymaster
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.mtk_emmc_support=1

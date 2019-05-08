@@ -103,6 +103,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.thumbnail.prefer_hw_codecs=true \
     vendor.mtk.vdec.waitkeyframeforplay=1
 
 # Neural Networks

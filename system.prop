@@ -2,6 +2,9 @@
 ro.audio.silent=0
 ro.camera.sound.forced=0
 
+# Boot
+sys.vendor.shutdown.waittime=500
+
 # Brand
 Build.BRAND=MTK
 

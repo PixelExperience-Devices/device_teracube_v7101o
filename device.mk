@@ -239,6 +239,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_vtservice
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
 # Text classifier
 PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor

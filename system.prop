@@ -25,6 +25,7 @@ dalvik.vm.boot-dex2oat-threads=8
 dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5,6,7
 
 # Display
+debug.sf.disable_backpressure=1
 debug.sf.latch_unsignaled=1
 ro.opengles.version=196610
 ro.zygote.preload.enable=0

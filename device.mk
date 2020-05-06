@@ -25,6 +25,10 @@ PRODUCT_PACKAGES += \
 TARGET_SCREEN_HEIGHT := 2280
 TARGET_SCREEN_WIDTH := 1080
 
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # Display
 PRODUCT_PACKAGES += \
     libvulkan

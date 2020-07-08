@@ -50,6 +50,7 @@ ro.kernel.zio=38,108,105,16
 
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
+debug.stagefright.ccodec=0
 
 # Order
 ro.product.property_source_order=odm,vendor,product,system

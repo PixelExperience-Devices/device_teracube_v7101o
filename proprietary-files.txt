@@ -13,7 +13,6 @@ lib64/libaptXHD_encoder.so:system_ext/lib64/libaptXHD_encoder.so|043c055498f6e6e
 -priv-app/ImsService/ImsService.apk
 bin/vtservice
 etc/init/init.vtservice.rc
-etc/permissions/privapp-permissions-mediatek.xml
 framework/mediatek-ims-extension-plugin.jar|5aae16437bcfae7da5474a17ab08de4ea67e000a
 framework/mediatek-ims-legacy.jar|d8813211112f6f3eb643626ed2d0aa14a9e89090
 lib/libmtk_vt_service.so

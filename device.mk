@@ -32,6 +32,7 @@ PRODUCT_COPY_FILES += \
 # Init
 PRODUCT_PACKAGES += \
     init.mt6771.rc \
+    fstab.enableswap \
     fstab.mt6771
 
 # Keylayout

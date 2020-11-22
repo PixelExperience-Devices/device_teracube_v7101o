@@ -5,6 +5,9 @@ ro.camera.sound.forced=0
 # Brand
 Build.BRAND=MTK
 
+# Camera
+persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com.google.camera
+
 # Display
 debug.sf.disable_backpressure=1
 debug.sf.enable_hwc_vds=1

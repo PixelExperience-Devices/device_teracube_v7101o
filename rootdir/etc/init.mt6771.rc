@@ -13,3 +13,5 @@ on post-fs
     # (at post-fs, the fstab has already been used to mount the partitions,
     #  so it is fine to just revert back)
     umount /vendor/etc/fstab.mt6771
+
+    mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind

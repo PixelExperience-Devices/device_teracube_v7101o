@@ -23,15 +23,9 @@ service ccci_mdinit /vendor/bin/ccci_mdinit 0
     group radio system
     class core
     oneshot
-    disabled
 
 service ccci3_mdinit /vendor/bin/ccci_mdinit 2
     user system
     group radio system
     class core
     oneshot
-    disabled
-
-on property:vold.decrypt=trigger_restart_framework
-    start ccci_mdinit
-    start ccci3_mdinit

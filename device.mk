@@ -71,6 +71,12 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI
 
+# RCS
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
+    PresencePolling \
+    RcsService
+
 # Radio Jar
 PRODUCT_BOOT_JARS += \
     mediatek-common \

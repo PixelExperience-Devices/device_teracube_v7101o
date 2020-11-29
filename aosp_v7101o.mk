@@ -20,7 +20,7 @@ $(call inherit-product, device/teracube/v7101o/device.mk)
 $(call inherit-product, device/teracube/v7101o/mtk-hals.mk)
 
 # Inherit some common PixelExperience stuff.
-TARGET_GAPPS_ARCH := arm64
+TARGET_USES_AOSP_RECOVERY := true
 TARGET_BOOT_ANIMATION_RES := 1080
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 

@@ -6,6 +6,12 @@
     "revision"   : "eleven"
  },
  {
+    "repository" : "vendor_teracube_firmware",
+    "target_path": "vendor/teracube/firmware",
+    "remote"     : "pixel-device-blobs",
+    "revision"   : "eleven"
+ },
+ {
    "repository"  : "vendor_mediatek_ims",
    "target_path" : "vendor/mediatek/ims",
    "remote"      : "pixel",

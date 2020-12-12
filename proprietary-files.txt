@@ -28,7 +28,3 @@ lib64/libmtkavenhancements.so
 lib64/libmtklimiter.so
 lib64/libmtkperf_client.so
 lib64/libmtkshifter.so
-
-# MTK Video Telephony [Compiled From Alps Against A11 Libstagefright]
-lib/vendor.mediatek.hardware.videotelephony@1.0.so|f85fd143f65126fb7005e2713b87329ca06a3a88
-lib64/vendor.mediatek.hardware.videotelephony@1.0.so|b5fa6b08642ccb66363cdb7f012c46ce7b2b24c0

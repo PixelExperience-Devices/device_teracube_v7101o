@@ -1,8 +1,20 @@
 [
-  {
+ {
     "repository" : "TheMalachite/vendor_teracube_v7101o",
     "target_path": "vendor/teracube/v7101o",
     "remote"     : "github",
     "revision"   : "eleven"
-  }
+ },
+ {
+   "repository"  : "vendor_mediatek_ims",
+   "target_path" : "vendor/mediatek/ims",
+   "remote"      : "pixel",
+   "branch"      : "eleven"
+ },
+ {
+   "repository"  : "vendor_mediatek_interfaces",
+   "target_path" : "vendor/mediatek/interfaces",
+   "remote"      : "pixel",
+   "branch"      : "eleven"
+ }
 ]

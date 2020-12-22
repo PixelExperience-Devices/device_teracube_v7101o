@@ -7,6 +7,9 @@ service charger /system/bin/charger
     capabilities SYS_BOOT
     seclabel u:r:charger:s0
 
+on early-init
+    mount none /system/etc/init/init.cccimdinit.rc /vendor/etc/init/init.cccimdinit.rc
+
 on init
     setprop sys.usb.ffs.aio_compat 1
     

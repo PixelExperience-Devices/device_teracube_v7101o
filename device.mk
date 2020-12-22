@@ -64,6 +64,7 @@ PRODUCT_PACKAGES += \
     
 # Init
 PRODUCT_PACKAGES += \
+    init.cccimdinit.rc \
     init.mt6771.rc \
     fstab.enableswap \
     fstab.mt6771

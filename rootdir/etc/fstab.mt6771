@@ -12,7 +12,6 @@
 /dev/block/platform/bootdevice/by-name/recovery  /recovery    emmc    defaults                                            first_stage_mount,nofail
 /dev/block/platform/bootdevice/by-name/boot      /boot        emmc    defaults                                            first_stage_mount,nofail
 /dev/block/platform/bootdevice/by-name/boot_para /boot_para   emmc    defaults                                            defaults
-/dev/block/platform/bootdevice/by-name/odmdtbo   /odmdtbo     emmc    defaults                                            defaults
 /dev/block/platform/bootdevice/by-name/dtbo      /dtbo        emmc    defaults                                            defaults
 /dev/block/platform/bootdevice/by-name/para      /misc        emmc    defaults                                            defaults
 /dev/block/platform/bootdevice/by-name/persist   /mnt/vendor/persist  ext4    noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc      wait,check,formattable

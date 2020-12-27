@@ -19,6 +19,10 @@ on init
     mount none /system/etc/fstab.mt6771 /vendor/etc/fstab.mt6771 bind
     mount none /system/etc/fstab.enableswap /vendor/etc/fstab.enableswap bind
 
+# Disable AOSP RIL if MTK RIL is up
+on property:vendor.ril.mtk=1
+    stop vendor.ril-daemon
+
 on post-fs
     # Unmount the overridden fstab because the SELinux label is incorrect
     # and some MTK daemons can crash because of that

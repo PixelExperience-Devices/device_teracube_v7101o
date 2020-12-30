@@ -242,6 +242,7 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    libshim_showlogo \
     libshim_vtservice
 
 # Text classifier

@@ -1,11 +1,5 @@
 [
  {
-    "repository" : "TheMalachite/kernel_teracube_v7101o",
-    "target_path": "kernel/teracube/v7101o",
-    "remote"     : "github",
-    "revision"   : "eleven"
- },
- {
     "repository" : "TheMalachite/vendor_teracube_v7101o",
     "target_path": "vendor/teracube/v7101o",
     "remote"     : "github",

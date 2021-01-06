@@ -6,6 +6,12 @@
     "revision"   : "eleven"
  },
  {
+    "repository" : "vendor_teracube_firmware",
+    "target_path": "vendor/teracube/firmware",
+    "remote"     : "pixel-devices-blobs",
+    "revision"   : "eleven"
+ },
+ {
    "repository"  : "device_teracube_v7101o-modules",
    "target_path" : "device/teracube/v7101o-modules",
    "remote"      : "pixel-devices-blobs",

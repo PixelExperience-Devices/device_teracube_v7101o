@@ -34,4 +34,4 @@ def AddImage(info, basename, dest, incremental):
 
 def OTA_InstallEnd(info, incremental):
   info.script.Print("Flashing dtbo image...")
-  AddImage(info, "dtbo.img", "/dev/block/platform/bootdevice/by-name/dtbo", incremental)
+  AddImage(info, "dtbo.img", "/dev/block/by-name/dtbo", incremental)

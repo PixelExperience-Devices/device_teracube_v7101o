@@ -1,8 +1,8 @@
 [
  {
-    "repository" : "TheMalachite/vendor_teracube_v7101o",
+    "repository" : "vendor_teracube_v7101o",
     "target_path": "vendor/teracube/v7101o",
-    "remote"     : "github",
+    "remote"     : "pixel-device-blobs",
     "revision"   : "eleven"
  },
  {

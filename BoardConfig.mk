@@ -92,6 +92,7 @@ TARGET_USES_MKE2FS := true
 
 TARGET_COPY_OUT_PRODUCT := system/product
 TARGET_COPY_OUT_SYSTEM_EXT := system/system_ext
+TARGET_COPY_OUT_VENDOR := vendor
 
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
@@ -116,3 +117,6 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR := $(DEVICE_PATH)/sepolicy/private
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
+
+# Inherit vendor partition
+-include vendor/teracube/v7101o-vendor/BoardConfig.mk

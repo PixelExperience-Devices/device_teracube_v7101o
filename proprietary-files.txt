@@ -808,10 +808,6 @@ vendor/lib/hw/lights.mt6771.so
 vendor/lib64/hw/android.hardware.light@2.0-impl-mediatek.so
 vendor/lib64/hw/lights.mt6771.so
 
-# Listen
-vendor/lib/hw/sound_trigger.primary.mt6771.so
-vendor/lib64/hw/sound_trigger.primary.mt6771.so
-
 # Media Hardware
 vendor/lib/libstagefrighthw.so
 vendor/lib64/libstagefrighthw.so

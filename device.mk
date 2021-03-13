@@ -20,7 +20,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@5.0-impl \
     android.hardware.bluetooth.audio@2.0-impl \
-    android.hardware.soundtrigger@2.2-impl \
+    android.hardware.soundtrigger@2.2 \
     audio.a2dp.default \
     audio.bluetooth.default \
     audio.r_submix.default \

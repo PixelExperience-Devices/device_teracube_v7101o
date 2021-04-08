@@ -44,10 +44,6 @@ PRODUCT_PACKAGES += \
     libhidltransport \
     libhwbinder
 
-# IDC
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/idc/mtk-kpd.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/mtk-kpd.idc
-
 # ImsInit hack
 PRODUCT_PACKAGES += \
     ImsInit

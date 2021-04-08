@@ -56,13 +56,6 @@ PRODUCT_PACKAGES += \
 # ImsInit hack
 PRODUCT_PACKAGES += \
     ImsInit
-    
-# Init
-PRODUCT_PACKAGES += \
-    init.cccimdinit.rc \
-    init.mt6771.rc \
-    fstab.enableswap \
-    fstab.mt6771
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -105,6 +98,26 @@ PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
     PresencePolling \
     RcsService
+
+# Rootdir
+PRODUCT_PACKAGES += \
+    init.ago.rc \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mt6771.rc \
+    init.mt6771.usb.rc \
+    init.project.rc \
+    init.sensor_1_0.rc \
+    init.stnfc.rc \
+    meta_init.connectivity.rc \
+    meta_init.modem.rc \
+    meta_init.project.rc \
+    meta_init.rc \
+    multi_init.rc \
+    init.cccimdinit.rc \
+    fstab.enableswap \
+    fstab.mt6771 \
+    ueventd.mt6771.rc
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal

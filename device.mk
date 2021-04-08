@@ -10,10 +10,6 @@ $(call inherit-product, vendor/teracube/v7101o/v7101o-vendor.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
-# APN
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/apns/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
-
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default

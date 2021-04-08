@@ -71,10 +71,6 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
-# Pre-opt SystemUI
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI
-
 # RCS
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \

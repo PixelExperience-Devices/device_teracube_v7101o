@@ -2,9 +2,6 @@
 ro.audio.silent=0
 ro.camera.sound.forced=0
 
-# Boot
-sys.vendor.shutdown.waittime=500
-
 # Brand
 Build.BRAND=MTK
 
@@ -48,13 +45,6 @@ sys.ipo.disable=1
 
 # Kernel
 ro.kernel.zio=38,108,105,16
-
-# Media
-media.stagefright.thumbnail.prefer_hw_codecs=true
-debug.stagefright.ccodec=0
-
-# Order
-ro.product.property_source_order=odm,vendor,product,system
 
 # Perf
 ro.mtk_perf_fast_start_win=1

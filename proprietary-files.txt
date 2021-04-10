@@ -1162,7 +1162,6 @@ vendor/etc/slp_conf
 vendor/etc/throttle.sh
 vendor/lib/hw/awinic.audio.effect.so
 vendor/lib/hw/flp.default.so
-vendor/lib/libaedv.so
 vendor/lib/libaurisysdemo.so
 vendor/lib/libbessound_hd_mtk_vendor.so
 vendor/lib/libblisrc32_vendor.so
@@ -1251,7 +1250,6 @@ vendor/lib/lib_speech_enh.so
 vendor/lib64/hw/awinic.audio.effect.so
 vendor/lib64/hw/flp.default.so
 vendor/lib64/libacdk.so
-vendor/lib64/libaedv.so
 vendor/lib64/libarmnn.so
 vendor/lib64/libaurisysdemo.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
@@ -1326,3 +1324,7 @@ vendor/lib64/libwpfa.so
 vendor/lib64/lib_bsscore.so
 vendor/lib64/lib_iir.so
 vendor/lib64/lib_speech_enh.so
+
+# Misc - from begonia-user-11-RP1A.200720.011-21.3.21-release-keys
+vendor/lib/libaedv.so|37ea8c93d3e4788a4020ffb697590a697b8959e7
+vendor/lib64/libaedv.so|989e3a926c173ebc97dcc26d8b00aaf1dbda44c9

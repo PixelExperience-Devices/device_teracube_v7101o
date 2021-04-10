@@ -17,7 +17,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
 # Inherit from v7101o device
 $(call inherit-product, device/teracube/v7101o/device.mk)
-$(call inherit-product, device/teracube/v7101o/mtk-hals.mk)
 
 # Inherit some common PixelExperience stuff.
 TARGET_BOOT_ANIMATION_RES := 1080

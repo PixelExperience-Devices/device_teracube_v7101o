@@ -1,15 +1,7 @@
-# MTK platform .rc configure
-
 import /vendor/etc/init/hw/init.connectivity.rc
 import /vendor/etc/init/hw/init.mt6771.usb.rc
-import /vendor/etc/init/hw/init.project.rc
 import /vendor/etc/init/hw/init.sensor_1_0.rc
-import /vendor/etc/init/hw/init.ago.rc
-import /vendor/etc/init/hw/init.stnfc.rc
-
-# init.modem.rc must be the LAST rc file because vold.post_fs_data_done is set in it
 import /vendor/etc/init/hw/init.modem.rc
-# *** DO NOT import the new rc file after this line ***
 
 on early-init
     write /proc/bootprof "INIT:early-init"
@@ -34,15 +26,15 @@ on init
 
     mkdir /mnt/cd-rom 0000 system system
 
-# change lk_env permission
+    # change lk_env permission
     chown root system /proc/lk_env
     chmod 0660 /proc/lk_env
 
-# increase sysctl_rmem_max and sysctl_wmem_max values to 2M
+    # increase sysctl_rmem_max and sysctl_wmem_max values to 2M
     write /proc/sys/net/core/wmem_max 8388608
     write /proc/sys/net/core/rmem_max 8388608
 
-# update cpus for cpuset cgroup
+    # update cpus for cpuset cgroup
     write /dev/cpuset/foreground/cpus 0-7
     write /dev/cpuset/foreground/boost/cpus 0-7
     write /dev/cpuset/background/cpus 0-3
@@ -51,10 +43,9 @@ on init
 
 on late-init
     write /proc/bootprof "INIT:late-init"
-# enable rcu_expedited
+    
+    # enable rcu_expedited
     write /sys/kernel/rcu_expedited 1
-
-# mount different fs start
 
 on charger
     exec /system/bin/e2fsck -f -p /dev/block/platform/bootdevice/by-name/cache
@@ -104,7 +95,7 @@ on fs
     write /sys/kernel/debug/tracing/trace_marker "B|1|Mount"
     wait_for_prop hwservicemanager.ready "true"
     start vendor.boot-hal-1-0
-    mount_all --early
+    mount_all /vendor/etc/fstab.mt6771 --early
     write /sys/kernel/debug/tracing/trace_marker "E"
     write /proc/bootprof "INIT:Mount_END"
     write /proc/sys/vm/swappiness 100
@@ -117,7 +108,7 @@ on late-fs
     write /proc/bootprof "INIT:late-fs"
     wait_for_prop hwservicemanager.ready "true"
     exec_start wait_for_keymaster
-    mount_all --late
+    mount_all /vendor/etc/fstab.mt6771 --late
 
 on post-fs
     write /proc/bootprof "INIT:post-fs"
@@ -147,7 +138,7 @@ on post-fs
     chown radio system /proc/freqhopping/status
     chown radio system /proc/freqhopping/userdef
 
-# change owner
+    # change owner
     chown system system /proc/bootprof
     chmod 0664 /proc/bootprof
     chown root system /proc/mtprof/cputime
@@ -248,13 +239,10 @@ on post-fs-data
     chmod 0660 /dev/spm
     chown system system /dev/spm
 
-# GPS
+    # GPS
     chmod 0775 /vendor/xbin/MPED
     chmod 0666 /dev/gps_emi
 
-
-# -----------------------
-# Add by MTK
     # SCP log
     chmod 0660 /sys/class/misc/scp/scp_mobile_log
     chown root system /sys/class/misc/scp/scp_mobile_log
@@ -275,14 +263,9 @@ on post-fs-data
     chmod 444 /etc/radvd/radvd.conf
 
     # Mali 3D GPU driver
-    #insmod /vendor/lib/modules/mali.ko
     chmod 666 /dev/mali0
-    #chown system graphics /dev/mali
-
-
 
     # Touch Panel
-    # chmod 0664 /dev/touch
     chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
     chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time
     chown root diag /sys/module/tpd_setting/parameters/tpd_mode
@@ -308,10 +291,7 @@ on post-fs-data
     chown root system /dev/alarm
 
     # M4U
-    #insmod /vendor/lib/modules/m4u.ko
-    #mknod /dev/M4U_device c 188 0
     chmod 0444 /dev/m4u
-    #chown system media /dev/M4U_device
 
     #set mlock limit to infinate (for m4u operation)
     setrlimit 8 -1 -1
@@ -345,12 +325,10 @@ on post-fs-data
     chmod 0666 /dev/goodix_fp
 
     #VideoCodec
-    #insmod /vendor/lib/modules/vcodec_kernel_driver.ko
     chmod 0660 /dev/Vcodec
     chown media system /dev/Vcodec
 
     #MJC
-    #insmod /vendor/lib/modules/mjc_kernel_driver.ko
     chmod 0660 /dev/MJC
     chown media system /dev/MJC
 
@@ -589,9 +567,6 @@ on post-fs-data
     chmod 0660 /dev/mtk_dfrc
     chown system graphics /dev/mtk_dfrc
 
-
-   #change partition permission
-
     chmod 0640 /mtd@sec_ro
     chown root system /mtd@sec_ro
 
@@ -641,9 +616,6 @@ on post-fs-data
 
 	#Thermal
 	mkdir /data/vendor/.tp/ 0775 system system
-
-# End of adding by MTK drivers
-# -----------------------
 
 on boot
     write /proc/bootprof "INIT:boot"
@@ -706,11 +678,11 @@ on boot
     chmod 0220 /sys/power/tuxonice/do_hibernate
 
 
-# Smartbook Handler Framework
+    # Smartbook Handler Framework
     chown system system /sys/power/sb_state
     chmod 0660 /sys/power/sb_state
 
-# HMP CPU hotplug strategy
+    # HMP CPU hotplug strategy
     chown system system /proc/hps/num_base_perf_serv
     chmod 0660 /proc/hps/num_base_perf_serv
     chown system system /proc/hps/num_limit_power_serv
@@ -732,7 +704,7 @@ on boot
     chown system system /proc/hps/down_times
     chmod 0660 /proc/hps/down_times
 
-# PPM
+    # PPM
     chown system system /proc/ppm/mode
     chmod 0660 /proc/ppm/mode
     chown system system /proc/ppm/policy/perfserv_min_perf_idx
@@ -766,7 +738,7 @@ on boot
     chown system system /proc/ppm/policy/hica_settings/L_ONLY_to_4L_LL/loading_hold_time
     chmod 0660 /proc/ppm/policy/hica_settings/L_ONLY_to_4L_LL/loading_hold_time
 
-# cpu_loading
+    # cpu_loading
     chown system system /proc/cpu_loading/onoff
     chmod 0664 /proc/cpu_loading/onoff
     chown system system /proc/cpu_loading/overThrhld
@@ -778,7 +750,7 @@ on boot
     chown system system /proc/cpu_loading/uevent_enable
     chmod 0664 /proc/cpu_loading/uevent_enable
 
-# CPU freq
+    # CPU freq
     chown system system /proc/cpufreq/cpufreq_limited_by_hevc
     chmod 0660 /proc/cpufreq/cpufreq_limited_by_hevc
     chown system system /proc/cpufreq/cpufreq_limited_max_freq_by_user
@@ -788,7 +760,7 @@ on boot
     chown system system /proc/cpufreq/enable_hw_gov
     chmod 0660 /proc/cpufreq/enable_hw_gov
 
-# BW monitor
+    # BW monitor
     chown system system /proc/fliperfs/cg_enable
     chmod 0664 /proc/fliperfs/cg_enable
     chown system system /proc/fliperfs/cg_threshold
@@ -798,7 +770,7 @@ on boot
     chown system system /proc/fliperfs/perf
     chmod 0664 /proc/fliperfs/perf
 
-# perfmgr
+    # perfmgr
     chown system system /proc/perfmgr/smart/hps_is_heavy
     chmod 0660 /proc/perfmgr/smart/hps_is_heavy
     chown system system /proc/perfmgr/smart/hps_check_duration
@@ -810,8 +782,8 @@ on boot
     chown system system /sys/power/dcm_state
     chmod 0660 /sys/power/dcm_state
 
-##Netlog tool
-   #change permissions about terminal
+    ##Netlog tool
+    #change permissions about terminal
     chown root radio /proc/net/vlan/config
     chmod 0640 /proc/net/vlan/config
     chown root radio /proc/net/ip6_tables_matches
@@ -830,15 +802,15 @@ on boot
     chown root radio /proc/net/netfilter/nfnetlink_log
     chown root radio /proc/net/netfilter/nfnetlink_queue
 
-# WMT proc
+    # WMT proc
     chown shell system /proc/driver/wmt_dbg
     chown shell system /proc/driver/wmt_aee
 
-# define device for EMCSMDLOGGER
+    # define device for EMCSMDLOGGER
     chown system radio /dev/ttyGS3
     chmod 0660 /dev/ttyGS3
 
-#Define device for ATCID
+    #Define device for ATCID
     chmod 660 /dev/ttyGS0
     chown system radio /dev/ttyGS0
     chmod 660 /dev/ttyGS1
@@ -927,41 +899,6 @@ on property:sys.boot_completed=1
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1"
     write /sys/devices/platform/10012000.dvfsrc_top/helio-dvfsrc/dvfsrc_debug "kir_emi -1"
 
-
-#service dpfd /vendor/bin/dpfd
-#	user root
-#	group system media
-
-#
-#  External Modme control related services
-#
-
-#
-#  Modem related services (Begin)
-#
-##Add by T.Zh for ppp daemon
-#service pppd /system/bin/pppd file /data/misc/ppp/ppp_options
-#    user root
-#    disabled
-#    oneshot
-#
-##
-#
-#  Modem related services (End)
-#
-
-#add for power-off alarm
-#service poad /vendor/bin/poad
-#    class main
-#    user system
-#    group system
-#    oneshot
-
-#service BGW /vendor/xbin/BGW
-#	user system
-#	group gps system radio
-#	class main
-
 # Battery info
 on property:persist.vendor.mediatek.fg.disable=1
     write /sys/devices/platform/battery_meter/FG_daemon_disable 1
@@ -1012,4 +949,3 @@ service osi /system/bin/osi
     user root
     disabled
     oneshot
-    #seclabel u:r:osi:s0

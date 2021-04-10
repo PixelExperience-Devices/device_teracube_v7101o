@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Kernel modules
+$(call inherit-product, device/teracube/v7101o-modules/modules.mk)
+
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/teracube/v7101o/v7101o-vendor.mk)
 

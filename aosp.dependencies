@@ -28,23 +28,5 @@
    "target_path" : "device/mediatek/sepolicy",
    "remote"      : "pixel",
    "branch"      : "eleven"
- },
- {
-   "repository"  : "vendor_mediatek-opensource",
-   "target_path" : "vendor/mediatek/opensource",
-   "remote"      : "pixel",
-   "branch"      : "eleven"
- },
- {
-   "repository"  : "vendor_mediatek_configs",
-   "target_path" : "vendor/mediatek/configs",
-   "remote"      : "pixel",
-   "branch"      : "eleven"
- },
- {
-   "repository"  : "vendor_mediatek_interfaces",
-   "target_path" : "vendor/mediatek/interfaces",
-   "remote"      : "pixel",
-   "branch"      : "eleven"
  }
 ]

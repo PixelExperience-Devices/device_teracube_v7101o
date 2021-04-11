@@ -1,4 +1,7 @@
 on init
+    # Create a more standard /dev/block layout for our scripts
+    symlink /dev/block/platform/bootdevice/ /dev/block/bootdevice
+
     mkdir /config
     mount configfs none /config
     mkdir /config/usb_gadget/g1 0770 shell shell
@@ -11,10 +14,9 @@ on init
     mkdir /config/usb_gadget/g1/configs/b.1 0777 shell shell
     mkdir /config/usb_gadget/g1/configs/b.1/strings/0x409 0770 shell shell
     mkdir /config/usb_gadget/g1/functions/ffs.adb
-    setprop sys.usb.configfs 1
     setprop sys.usb.ffs.aio_compat 1
 
-property:ro.debuggable=0
+on property:ro.debuggable=0
     # distinguish USB shoulde connect or not, i.e. CDP vs SDP
     write /sys/class/udc/musb-hdrc/device/cmode 2
     # set charging free due to it wait for USB activation
@@ -30,20 +32,7 @@ on property:sys.usb.ffs.ready=1
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC "musb-hdrc"
 
-on fs
-    wait /dev/block/platform/bootdevice/
-    symlink /dev/block/platform/bootdevice/ /dev/block/bootdevice
-
 on post-fs
     # Support A/B feature for EMMC and UFS boot region
-    symlink /dev/block/sda /dev/block/mmcblk0boot0
-    symlink /dev/block/sdb /dev/block/mmcblk0boot1
     symlink /dev/block/mmcblk0boot0 /dev/block/platform/bootdevice/by-name/preloader_a
     symlink /dev/block/mmcblk0boot1 /dev/block/platform/bootdevice/by-name/preloader_b
-
-
-    # Support A/B feature for combo emmc and ufs OTA update
-    symlink /dev/block/platform/bootdevice/by-name/preloader_a /dev/block/platform/bootdevice/by-name/preloader_emmc_a
-    symlink /dev/block/platform/bootdevice/by-name/preloader_b /dev/block/platform/bootdevice/by-name/preloader_emmc_b
-    symlink /dev/block/platform/bootdevice/by-name/preloader_a /dev/block/platform/bootdevice/by-name/preloader_ufs_a
-    symlink /dev/block/platform/bootdevice/by-name/preloader_b /dev/block/platform/bootdevice/by-name/preloader_ufs_b

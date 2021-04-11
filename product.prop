@@ -1,9 +1,2 @@
-# Charger
-ro.charger.enable_suspend=true
-
 # Display
 ro.sf.lcd_density=420
-
-# OMX
-debug.stagefright.omx_default_rank.sw-audio=1
-debug.stagefright.omx_default_rank=0

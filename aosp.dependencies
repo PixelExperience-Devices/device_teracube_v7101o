@@ -36,12 +36,6 @@
    "branch"      : "eleven"
  },
  {
-   "repository"  : "vendor_mediatek_ims",
-   "target_path" : "vendor/mediatek/ims",
-   "remote"      : "pixel",
-   "branch"      : "eleven"
- },
- {
    "repository"  : "vendor_mediatek_interfaces",
    "target_path" : "vendor/mediatek/interfaces",
    "remote"      : "pixel",

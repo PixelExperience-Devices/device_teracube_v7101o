@@ -14,8 +14,6 @@ $(call inherit-product, vendor/teracube/v7101o/v7101o-vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # MTK Vendor Repos
-$(call inherit-product, vendor/mediatek/ims/mtk-ims.mk)
-$(call inherit-product, vendor/mediatek/ims/mtk-engi.mk)
 $(call inherit-product, vendor/mediatek/opensource/mtk-builds.mk)
 $(call inherit-product, vendor/mediatek/configs/mt6771.mk)
 
@@ -105,6 +103,19 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libhwbinder \
     libhwbinder.vendor
+
+# IMS
+PRODUCT_BOOT_JARS += \
+    mediatek-common \
+    mediatek-framework \
+    mediatek-ims-base \
+    mediatek-ims-common \
+    mediatek-telecom-common \
+    mediatek-telephony-base \
+    mediatek-telephony-common
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
 
 # Keylayout
 PRODUCT_COPY_FILES += \

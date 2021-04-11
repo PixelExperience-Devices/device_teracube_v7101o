@@ -236,6 +236,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libsensorndkbridge
 
+# Shims
+PRODUCT_PACKAGES += \
+    libshim_vtservice
+
 # TinyXML
 PRODUCT_PACKAGES += \
     libtinyxml

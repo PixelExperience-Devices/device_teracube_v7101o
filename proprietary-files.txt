@@ -624,13 +624,11 @@ vendor/lib64/libwvhidl.so|a2c94646a2c4861222a1e8e9a802c68824e6f0f4
 vendor/lib64/mediadrm/libwvdrmengine.so|57c12b5dcfa7098718e3a7b39b2f6eae33b68dcd
 
 # Display Hardware
-vendor/lib/hw/gralloc.default.so
 vendor/lib/hw/gralloc.mt6771.so
 vendor/lib/hw/memtrack.mt6771.so
 vendor/lib/libion_mtk.so
 vendor/lib/libion_ulit.so
 vendor/lib/libgralloc_extra.so
-vendor/lib64/hw/gralloc.default.so
 vendor/lib64/hw/gralloc.mt6771.so
 vendor/lib64/hw/hwcomposer.mt6771.so
 vendor/lib64/hw/memtrack.mt6771.so
@@ -641,7 +639,7 @@ vendor/lib64/libgralloc_extra.so
 # Fingerprint
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
-vendor/lib64/hw/fingerprint.default.so
+vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.mt6771.so
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixhwfingerprint.so
@@ -789,8 +787,6 @@ vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 vendor/lib64/hw/keystore.v2.trustkernel.so
 vendor/lib64/hw/kmsetkey.trustkernel.so
 vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
-vendor/lib64/libkeystore-engine-wifi-hidl.so
-vendor/lib64/libkeystore-wifi-hidl.so
 vendor/lib64/libkmsetkey.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
@@ -845,12 +841,6 @@ vendor/lib/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so
 vendor/lib/vendor.mediatek.hardware.mtkcodecservice@1.1.so
 vendor/lib64/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so
 vendor/lib64/vendor.mediatek.hardware.mtkcodecservice@1.1.so
-
-# NFC
-vendor/bin/hw/android.hardware.nfc@1.1-service-st
-vendor/etc/init/android.hardware.nfc@1.1-service.st.rc
-vendor/lib/nfc_nci.st21nfc.default.so
-vendor/lib64/nfc_nci.st21nfc.default.so
 
 # Neural Networks - from Note_11P-user 11 RP1A.200720.011 2101131254 release-keys
 vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron|b7ef6ae8ad38529a4554fb3ccdffd46440ab2251
@@ -1265,7 +1255,7 @@ vendor/bin/wpa_cli
 vendor/etc/init/hostapd.android.rc
 vendor/etc/init/wlan_assistant.rc
 vendor/lib/libwpa_client.so
-vendor/lib64/libwifi-hal.so
+vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so
 vendor/lib64/libwpa_client.so
 
 # WiFi Hardware
@@ -1362,7 +1352,6 @@ vendor/lib/libmp4enc_sa.ca7.so
 vendor/lib/libmp4enc_xa.ca7.so
 vendor/lib/libmsbc_mtk.so
 vendor/lib/libmtcloader.so
-vendor/lib/libopus.so
 vendor/lib/libperfctl_vendor.so
 vendor/lib/libpixelflinger.so
 vendor/lib/libpl.so
@@ -1377,7 +1366,6 @@ vendor/lib/libstorage_otp.so
 vendor/lib/libstrongswan.so
 vendor/lib/libSwJpgCodec.so
 vendor/lib/libsysenv.so
-vendor/lib/libtextclassifier_hash.so
 vendor/lib/libtflite_mtk.so
 vendor/lib/libtflite_mtk_static.so
 vendor/lib/libutinterface_custom_md.so
@@ -1387,12 +1375,10 @@ vendor/lib/libvcodecdrv.so
 vendor/lib/libvcodec_oal.so
 vendor/lib/libvcodec_utility.so
 vendor/lib/libverno.so
-vendor/lib/libvorbisidec.so
 vendor/lib/libvp8dec_sa.ca7.so
 vendor/lib/libvp8enc_sa.ca7.so
 vendor/lib/libvp9dec_sa.ca7.so
 vendor/lib/libvpu.so
-vendor/lib/libvpx.so
 vendor/lib/libvt_custom.so
 vendor/lib/libwo.so
 vendor/lib/lib_bsscore.so
@@ -1460,7 +1446,6 @@ vendor/lib64/libssl-ss.so
 vendor/lib64/libstereoinfoaccessor_vsdof.so
 vendor/lib64/libstrongswan.so
 vendor/lib64/libsysenv.so
-vendor/lib64/libtextclassifier_hash.so
 vendor/lib64/libtflite_mtk.so
 vendor/lib64/libtflite_mtk_static.so
 vendor/lib64/libutinterface_custom_md.so

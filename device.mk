@@ -117,6 +117,11 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-service
 
 # Media
+PRODUCT_PACKAGES += \
+    libopus \
+    libvorbisidec \
+    libvpx
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(LOCAL_PATH)/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
@@ -134,8 +139,9 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    Tag \
     NfcNci \
+    Tag \
+    android.hardware.nfc@1.1-service.st \
     com.android.nfc_extras
 
 PRODUCT_COPY_FILES += \
@@ -244,7 +250,7 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
 
-# VNDK v29 Coppy Files
+# VNDK v29 Copy Files
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-sp/libcompiler_rt.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcompiler_rt.so \
     prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libmedia_helper.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/libmedia_helper-v29.so \
@@ -253,7 +259,9 @@ PRODUCT_COPY_FILES += \
 # WiFi
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
-    WifiOverlay
+    WifiOverlay \
+    libkeystore-engine-wifi-hidl \
+    libkeystore-wifi-hidl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \

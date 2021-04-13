@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The PixelExperience Project
+# Copyright (C) 2020-2021 The PixelExperience Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -32,7 +32,6 @@ BOARD_AVB_ENABLE := false
 
 # Audio
 USE_CUSTOM_AUDIO_POLICY := 1
-USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include

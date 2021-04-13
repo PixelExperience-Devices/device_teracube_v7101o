@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The PixelExperience Project
+# Copyright (C) 2020-2021 The PixelExperience Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -87,8 +87,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.base@1.0_system \
-    android.hidl.manager@1.0 \
-    android.hidl.manager@1.0_system \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \

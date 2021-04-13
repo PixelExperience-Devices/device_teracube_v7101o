@@ -14,13 +14,13 @@
  {
    "repository"  : "device_teracube_v7101o-modules",
    "target_path" : "device/teracube/v7101o-modules",
-   "remote"      : "pixel-devices-blobs",
+   "remote"      : "pixel-devices",
    "branch"      : "eleven"
  },
  {
    "repository"  : "kernel_mediatek_alps-4.4",
    "target_path" : "kernel/mediatek/alps-4.4",
-   "remote"      : "pixel-devices-blobs",
+   "remote"      : "pixel-devices",
    "branch"      : "eleven"
  },
  {

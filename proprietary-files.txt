@@ -2,5 +2,49 @@
 lib64/libaptX_encoder.so:system_ext/lib64/libaptX_encoder.so|9e87fed4eac0e9fe428eaf8d0db7a1af89d521e1
 lib64/libaptXHD_encoder.so:system_ext/lib64/libaptXHD_encoder.so|043c055498f6e6e2b0564ad35ea17b012844cbce
 
-# IMS
+# IMS (System)
+-framework/mediatek-common.jar
+-framework/mediatek-framework.jar
+-framework/mediatek-ims-base.jar
+-framework/mediatek-ims-common.jar
+-framework/mediatek-telecom-common.jar
+-framework/mediatek-telephony-base.jar
+-framework/mediatek-telephony-common.jar
+-priv-app/ImsService/ImsService.apk
+bin/vtservice
 etc/apns-conf.xml:product/etc/apns-conf.xml
+etc/init/init.vtservice.rc
+framework/mediatek-ims-extension-plugin.jar
+framework/mediatek-ims-legacy.jar
+lib/libmtk_vt_service.so
+lib/libmtk_vt_wrapper.so
+lib/libmtkaudio_utils.so
+lib/libmtkavenhancements.so
+lib/libmtklimiter.so
+lib/libmtkperf_client.so
+lib/libmtkshifter.so
+lib/vendor.mediatek.hardware.videotelephony@1.0.so
+lib64/libmtk_vt_wrapper.so
+lib64/libmtkaudio_utils.so
+lib64/libmtkavenhancements.so
+lib64/libmtklimiter.so
+lib64/libmtkperf_client.so
+lib64/libmtkshifter.so
+lib64/vendor.mediatek.hardware.videotelephony@1.0.so
+
+# IMS (System) - from Note_11P-user 11 RP1A.200720.011 2101131254 release-keys
+lib/libcomutils.so|b1eb6f3f832bfa2eaf246d3a682a0908e62cdca1
+lib/libsignal.so|79abd79460f3c257787618a3070d67b03ac794a0
+lib/libsink.so|a62d16203c2aa2e6d27060e2533dec743ad95e65
+lib/libsource.so|829ebb25e2636077363fcecddc469839748a8007
+lib/libimsma.so|b0078f5f44cec67584c7fdd42ba475546e1db6b8
+lib/libimsma_adapt.so|07b39f19ac4d599cd90553ac918fd67ace3a0a37
+lib/libimsma_rtp.so|7f016a6d5f5b74b979b00b5f21b08dcbaaacd651
+lib/libimsma_socketwrapper.so|44f042ce96a8fd1e3022880ba5dcbe3a23283eb7
+lib/libvt_avsync.so|7bc3c6d7d10e68280a5f139043bf0e822ced6800
+lib/libvcodec_cap.so|579daf18767eaa7ee1f297b4e706316f660d70fc
+lib/libvcodec_capenc.so|f7950db108c77be5ee3650fc5e80f6afd0fc8f50
+lib/vendor.mediatek.hardware.mms@1.0.so|fa306bff67192612981718b76dc7a3b34e25e43d
+lib/vendor.mediatek.hardware.mms@1.1.so|16f05c55f1be89dc144bae2f330efae72ccd6327
+lib64/libvcodec_cap.so|17519ad971e0f3e9131ae27754325c65c1aea4e7
+lib64/libvcodec_capenc.so|01b8c4b442d0928c99529f0b76e38782e866980b

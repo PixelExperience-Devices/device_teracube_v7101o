@@ -4,17 +4,5 @@
     "target_path": "vendor/teracube/v7101o",
     "remote"     : "pixel-devices-blobs",
     "revision"   : "eleven"
- },
- {
-   "repository"  : "vendor_mediatek_ims",
-   "target_path" : "vendor/mediatek/ims",
-   "remote"      : "pixel",
-   "branch"      : "eleven"
- },
- {
-   "repository"  : "vendor_mediatek_interfaces",
-   "target_path" : "vendor/mediatek/interfaces",
-   "remote"      : "pixel",
-   "branch"      : "eleven"
  }
 ]

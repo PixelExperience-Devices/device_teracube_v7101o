@@ -45,8 +45,9 @@ def AddFirmware(info, basename, dest, dest_second, incremental):
     info.script.AppendExtra('package_extract_file("%s", "%s");' % (name, dest_second))
 
 def OTA_InstallEnd(info, incremental):
-  info.script.Print("Flashing dtbo image...")
+  info.script.Print("Flashing dtbo and vendor images...")
   AddImage(info, "dtbo.img", "/dev/block/by-name/dtbo", incremental)
+  AddImage(info, "vendor.img", "/dev/block/by-name/vendor", incremental)
   info.script.Print("Flashing firmware images...")
   AddFirmware(info, "logo.bin", "/dev/block/by-name/logo", False, incremental)
   AddFirmware(info, "cam_vpu1.img", "/dev/block/by-name/cam_vpu1", False, incremental)

@@ -86,6 +86,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# Shims
+PRODUCT_PACKAGES += \
+    libshim_vtservice
+
 # Tethering
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay

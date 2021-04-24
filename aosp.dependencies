@@ -3,7 +3,7 @@
     "repository" : "vendor_teracube_v7101o",
     "target_path": "vendor/teracube/v7101o",
     "remote"     : "pixel-devices-blobs",
-    "revision"   : "eleven"
+    "revision"   : "eleven-wip"
  },
  {
     "repository" : "vendor_teracube_firmware",

@@ -47,6 +47,10 @@ BUILD_BROKEN_DUP_RULES := true
 # Display
 TARGET_SCREEN_DENSITY := 440
 
+# HIDL
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x40078000

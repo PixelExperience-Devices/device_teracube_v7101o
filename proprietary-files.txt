@@ -1,14 +1,6 @@
 # Device proprietary files - from Teracube A10_BETA-1, unless pinned
 
 # AEE
-vendor/bin/aeev
-vendor/bin/aee_aedv
-vendor/bin/aee_aedv64
-vendor/bin/aee_archivev
-vendor/bin/aee_dumpstatev
-vendor/etc/aee-config
-vendor/etc/init/aee_aedv.rc
-vendor/etc/init/aee_aedv64.rc
 vendor/lib/libaedv.so
 vendor/lib/libdirect-coredump.so
 vendor/lib/libladder.so

@@ -192,6 +192,29 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
+# Rootdir
+PRODUCT_PACKAGES += \
+    factory_init.connectivity.rc \
+    factory_init.project.rc \
+    factory_init.rc \
+    init.aee.rc \
+    init.ago.rc \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mt6771.rc \
+    init.mt6771.usb.rc \
+    init.project.rc \
+    init.sensor_1_0.rc \
+    init.stnfc.rc \
+    meta_init.connectivity.rc \
+    meta_init.modem.rc \
+    meta_init.project.rc \
+    meta_init.rc \
+    multi_init.rc \
+    fstab.enableswap \
+    fstab.mt6771 \
+    ueventd.mt6771.rc
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi

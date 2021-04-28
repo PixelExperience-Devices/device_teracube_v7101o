@@ -12,6 +12,13 @@ vendor/lib64/libaedv.so|bd09673530e80f6cde27d91229b6df6394191053
 vendor/lib64/libladder.so|47ab171fde2026c25c0c63f0af9bfcee3fcd74a9
 vendor/lib64/libudf.so|00563b48abe3e19856133a87775363a9ef98c049
 
+# APU - from Note_11P-user 11 RP1A.200720.011 2101131254 release-keys
+vendor/lib64/APUWareUtilsServer.so|1acb9401b204532a695a37cb0e507c5cdf5d8431
+vendor/lib64/APUWareXrpServer.so|9423f2bcb9c3b11402bde6ffdc900871cc0e543d
+vendor/lib64/libapusys.so|cce16a3c03f928a52a73dbdb21a11495e71a142f
+vendor/lib64/vendor.mediatek.hardware.apuware.utils@1.0.so|9f82b45c2f1b3a5dfdd43a8ded044301c8b7e812
+vendor/lib64/vendor.mediatek.hardware.apuware.xrp@1.0.so|b3ddc313018cfaa0549c50a33c7f82e25ddb9856
+
 # Audio
 vendor/lib/libaudiocompensationfilterc.so
 vendor/lib/libaudiocompensationfilter_vendor.so

@@ -239,6 +239,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_vtservice
 
+# Text classifier
+PRODUCT_PACKAGES += \
+    libtextclassifier_hash.vendor
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \

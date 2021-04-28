@@ -65,6 +65,11 @@ function blob_fixup() {
         vendor/bin/hw/hostapd)
             patchelf --add-needed libcompiler_rt.so ${2}
             ;;
+        vendor/etc/init/init.cccimdinit.rc)
+            sed -i -e 's/disabled/#disabled/g' ${2}
+            sed -i -e 's/on property/#on property/g' ${2}
+            sed -i -e 's/start/#start/g' ${2}
+            ;;
         vendor/bin/hw/wpa_supplicant)
             patchelf --add-needed libcompiler_rt.so ${2}
             ;;

@@ -1,0 +1,32 @@
+[
+ {
+    "repository" : "vendor_teracube_v7101o",
+    "target_path": "vendor/teracube/v7101o",
+    "remote"     : "pixel-devices-blobs",
+    "revision"   : "eleven-wip"
+ },
+ {
+    "repository" : "vendor_teracube_firmware",
+    "target_path": "vendor/teracube/firmware",
+    "remote"     : "pixel-devices-blobs",
+    "revision"   : "eleven"
+ },
+ {
+   "repository"  : "device_teracube_v7101o-modules",
+   "target_path" : "device/teracube/v7101o-modules",
+   "remote"      : "pixel-devices",
+   "branch"      : "eleven"
+ },
+ {
+   "repository"  : "kernel_mediatek_alps-4.4",
+   "target_path" : "kernel/mediatek/alps-4.4",
+   "remote"      : "pixel-devices",
+   "branch"      : "eleven"
+ },
+ {
+   "repository"  : "device_mediatek_sepolicy",
+   "target_path" : "device/mediatek/sepolicy",
+   "remote"      : "pixel",
+   "branch"      : "eleven"
+ }
+]

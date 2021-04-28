@@ -13,13 +13,9 @@ on post-fs-data
     mkdir /mnt/vendor/nvdata/md3  0770 root system
     mkdir /data/md3	0770 root system
 
-#  Build-in Modified - S
-#    insmod /vendor/lib/modules/ccci_plat.ko
-#    insmod /vendor/lib/modules/ccci.ko
-#  Build-in Modified - E
     chown radio radio /sys/kernel/ccci/boot
 
-#SeLinux
+    #SeLinux
     mkdir /data/ccci_cfg 0770 system radio
     restorecon /data/ccci_cfg
     restorecon_recursive /mnt/vendor/protect_f

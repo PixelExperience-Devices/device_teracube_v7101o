@@ -206,11 +206,6 @@ PRODUCT_PACKAGES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    factory_init.connectivity.rc \
-    factory_init.project.rc \
-    factory_init.rc \
-    init.aee.rc \
-    init.ago.rc \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6771.rc \
@@ -223,7 +218,6 @@ PRODUCT_PACKAGES += \
     meta_init.project.rc \
     meta_init.rc \
     multi_init.rc \
-    fstab.enableswap \
     fstab.mt6771 \
     ueventd.mt6771.rc
 

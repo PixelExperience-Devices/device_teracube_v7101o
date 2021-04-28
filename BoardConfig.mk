@@ -114,6 +114,9 @@ ENABLE_VENDOR_RIL_SERVICE := true
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-03-05
 
+# SEPolicy
+include device/mediatek/sepolicy/sepolicy.mk
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 

@@ -98,8 +98,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.mtk.vdec.waitkeyframeforplay=1 \
-    ro.vendor.have_aeev_feature=1
+    vendor.mtk.vdec.waitkeyframeforplay=1
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \

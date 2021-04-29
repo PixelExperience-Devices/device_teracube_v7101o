@@ -2,9 +2,7 @@
 
 import /vendor/etc/init/hw/init.connectivity.rc
 import /vendor/etc/init/hw/init.mt6771.usb.rc
-import /vendor/etc/init/hw/init.project.rc
 import /vendor/etc/init/hw/init.sensor_1_0.rc
-import /vendor/etc/init/hw/init.stnfc.rc
 import /vendor/etc/init/hw/init.modem.rc
 
 on early-init
@@ -52,7 +50,6 @@ on charger
     mount ext4 /dev/block/platform/bootdevice/by-name/cache /cache rw wait
     chmod 0660 /dev/spm
     chown system system /dev/spm
-    start spm_script
     chmod 0666 /dev/kmsg
     chmod 0775 /mnt/vendor
     mkdir /mnt/vendor/nvcfg
@@ -91,7 +88,6 @@ on fs
     write /proc/bootprof "INIT:Mount_START"
     write /sys/kernel/debug/tracing/trace_marker "B|1|Mount"
     wait_for_prop hwservicemanager.ready "true"
-    start vendor.boot-hal-1-0
     mount_all /vendor/etc/fstab.mt6771 --early
     mount_all /vendor/etc/fstab.mt6771 --late
     write /sys/kernel/debug/tracing/trace_marker "E"
@@ -153,6 +149,9 @@ on post-fs
     symlink /dev/block/platform/bootdevice/by-name/preloader_b /dev/block/platform/bootdevice/by-name/preloader_emmc_b
     symlink /dev/block/platform/bootdevice/by-name/preloader_a /dev/block/platform/bootdevice/by-name/preloader_ufs_a
     symlink /dev/block/platform/bootdevice/by-name/preloader_b /dev/block/platform/bootdevice/by-name/preloader_ufs_b
+
+    # NFC
+    start nfc_hal_service
 
 on post-fs-data
     write /proc/bootprof "INIT:post-fs-data"
@@ -608,6 +607,9 @@ on post-fs-data
     #Thermal
     mkdir /data/vendor/.tp/ 0775 system system
 
+    # NFC
+    mkdir /data/vendor/nfc_socket 0777 root root
+
 on boot
     write /proc/bootprof "INIT:boot"
 
@@ -806,33 +808,6 @@ on boot
     chmod 660 /dev/ttyGS1
     chown system radio /dev/ttyGS1
 
-on property:vold.decrypt=trigger_reset_main
-    write /proc/bootprof "INIT:vold.decrypt=trigger_reset_main"
-    setprop sys.boot_completed 0
-    setprop dev.bootcomplete 0
-
-on property:vold.decrypt=trigger_post_fs_data
-    write /proc/bootprof "INIT:vold.decrypt=trigger_post_fs_data"
-
-on property:vold.decrypt=trigger_restart_min_framework
-    write /proc/bootprof "INIT:vold.decrypt=trigger_restart_min_framework"
-    start msensord
-
-on property:vold.decrypt=trigger_restart_framework
-    write /proc/bootprof "INIT:vold.decrypt=trigger_restart_framework"
-    start msensord
-    setprop sys.usb.config none
-    setprop sys.usb.config ${sys.usb.state}
-
-on property:vold.decrypt=trigger_shutdown_framework
-    write /proc/bootprof "INIT:vold.decrypt=trigger_shutdown_framework"
-    setprop sys.boot_completed 0
-    setprop dev.bootcomplete 0
-
-# Set enableflags for boot Systrace
-on early-init && property:ro.boot.boot_trace=1
-    setprop debug.atrace.tags.enableflags 0x1fffffe
-
 # Stop bootprof
 on property:sys.boot_completed=1
     write /proc/bootprof "0"
@@ -841,14 +816,6 @@ on property:sys.boot_completed=1
 ## mtk printk uart controller
 on property:persist.vendor.uartconsole.enable=*
     write /proc/mtprintk ${persist.vendor.uartconsole.enable}
-
-# bugreport is triggered by holding down volume down, volume up and power
-service bugreport /system/bin/dumpstate -d -p -B -z \
-        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
-    class late_start
-    disabled
-    oneshot
-    keycodes 114 115 116
 
 # end boot time fs tune
 on property:sys.boot_completed=1
@@ -865,10 +832,8 @@ on property:sys.boot_completed=1
     write /sys/block/dm-4/queue/read_ahead_kb 128
     write /sys/block/dm-5/queue/read_ahead_kb 128
 
-
 # start EAS+
 on property:sys.boot_completed=1
-
     write /sys/devices/system/cpu/eas/enable 2
     write /proc/cpufreq/cpufreq_sched_disable 0
     chown system system /dev/stune/foreground/schedtune.prefer_idle
@@ -889,53 +854,6 @@ on property:sys.boot_completed=1
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1"
     write /sys/devices/platform/10012000.dvfsrc_top/helio-dvfsrc/dvfsrc_debug "kir_emi -1"
 
-# Battery info
-on property:persist.vendor.mediatek.fg.disable=1
-    write /sys/devices/platform/battery_meter/FG_daemon_disable 1
-    write /sys/bus/platform/devices/battery/FG_daemon_disable 1
-
-on property:persist.vendor.mediatek.fg.force25c=1
-    write /sys/devices/platform/battery_meter/FG_drv_force25c 1
-    write /sys/bus/platform/devices/battery/Battery_Temperature 25
-
-on property:persist.vendor.mediatek.fg.force25c=0
-    write /sys/devices/platform/battery_meter/FG_drv_force25c 0
-    write /sys/bus/platform/devices/battery/Battery_Temperature 65535
-
-on property:persist.vendor.mediatek.fg.log.enable=1
-    write /sys/devices/platform/battery_meter/FG_daemon_log_level 7
-    write /sys/bus/platform/devices/battery/FG_daemon_log_level 7
-    write /proc/sys/kernel/printk 8
-
-# add loghidl client
-service loghidlsysservice /system/bin/loghidlsysservice
-    class main
-    user root
-    group system
-    disabled
-
-# add meta_tst for ATM
-service meta_tst /vendor/bin/meta_tst
-    class main
-    user system
-    group radio gps system wifi audio bluetooth media
-    capabilities NET_RAW NET_ADMIN
-    disabled
-    oneshot
-
-# start meta_tst for ATM
-on property:sys.boot_completed=1 && property:ro.boot.atm=enable
-    start meta_tst
-    start loghidlvendorservice
-    start loghidlsysservice
-
 # FPSGO FBT Game
 on boot
     insmod /vendor/lib/modules/fpsgo.ko
-
-# VSIM service (vendor OSI)
-service osi /system/bin/osi
-    class main
-    user root
-    disabled
-    oneshot

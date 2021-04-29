@@ -211,14 +211,7 @@ PRODUCT_PACKAGES += \
     init.modem.rc \
     init.mt6771.rc \
     init.mt6771.usb.rc \
-    init.project.rc \
     init.sensor_1_0.rc \
-    init.stnfc.rc \
-    meta_init.connectivity.rc \
-    meta_init.modem.rc \
-    meta_init.project.rc \
-    meta_init.rc \
-    multi_init.rc \
     fstab.mt6771 \
     ueventd.mt6771.rc
 

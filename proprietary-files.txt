@@ -146,7 +146,6 @@ vendor/etc/audio_param/VOW_AudioParam.xml
 vendor/etc/audio_param/VOW_ParamUnitDesc.xml
 vendor/etc/aurisys_param/Speech_AudioParam.xml
 vendor/etc/aurisys_config.xml
-vendor/etc/default_volume_tables.xml
 
 # Audio Hardware
 vendor/lib/hw/audio.primary.mt6771.so

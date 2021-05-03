@@ -55,8 +55,11 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        system/bin/vtservice)
+        bin/vtservice)
             patchelf --add-needed libshim_vtservice.so ${2}
+            ;;
+        lib/libshowlogo.so)
+            patchelf --add-needed libshim_showlogo.so ${2}
             ;;
         vendor/bin/hw/android.hardware.wifi@1.0-service-lazy-mediatek)
             patchelf --add-needed libcompiler_rt.so ${2}

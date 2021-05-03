@@ -1,0 +1,47 @@
+prebuilt_etc {
+    name: "init.connectivity.rc",
+    src: "etc/init.connectivity.rc",
+    vendor: true,
+    sub_dir: "init/hw",
+}
+
+prebuilt_etc {
+    name: "init.modem.rc",
+    src: "etc/init.modem.rc",
+    vendor: true,
+    sub_dir: "init/hw",
+}
+
+prebuilt_etc {
+    name: "init.mt6771.rc",
+    src: "etc/init.mt6771.rc",
+    vendor: true,
+    sub_dir: "init/hw",
+}
+
+prebuilt_etc {
+    name: "init.mt6771.usb.rc",
+    src: "etc/init.mt6771.usb.rc",
+    vendor: true,
+    sub_dir: "init/hw",
+}
+
+prebuilt_etc {
+    name: "init.sensor_1_0.rc",
+    src: "etc/init.sensor_1_0.rc",
+    vendor: true,
+    sub_dir: "init/hw",
+}
+
+prebuilt_etc {
+    name: "fstab.mt6771",
+    src: "etc/fstab.mt6771",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "ueventd.mt6771.rc",
+    filename: "ueventd.rc",
+    src: "etc/ueventd.mt6771.rc",
+    vendor: true,
+}

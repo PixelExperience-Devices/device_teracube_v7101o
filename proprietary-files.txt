@@ -1044,9 +1044,6 @@ vendor/lib/libipsec_ims_shr.so
 vendor/lib64/libipsec_ims_shr.so
 
 # Rootdir
-vendor/bin/factory
-vendor/bin/meta_tst
-vendor/etc/factory.ini
 vendor/etc/partition_permission.sh
 
 # Security

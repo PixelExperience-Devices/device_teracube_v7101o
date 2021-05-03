@@ -218,7 +218,9 @@ PRODUCT_PACKAGES += \
     init.mt6771.usb.rc \
     init.sensor_1_0.rc \
     fstab.mt6771 \
-    ueventd.mt6771.rc
+    ueventd.mt6771.rc \
+    partition_permission.sh \
+    throttle.sh
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal

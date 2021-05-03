@@ -1043,9 +1043,6 @@ vendor/etc/ipsec/strongswan.conf
 vendor/lib/libipsec_ims_shr.so
 vendor/lib64/libipsec_ims_shr.so
 
-# Rootdir
-vendor/etc/partition_permission.sh
-
 # Security
 vendor/etc/security/cacerts/00673b5b.0
 vendor/etc/security/cacerts/04f60c28.0
@@ -1315,7 +1312,6 @@ vendor/etc/init/muxreport.rc
 vendor/etc/init/netdagent.rc
 vendor/etc/init/ppl_agent.rc
 vendor/etc/slp_conf
-vendor/etc/throttle.sh
 vendor/lib/hw/awinic.audio.effect.so
 vendor/lib/hw/flp.default.so
 vendor/lib/libaurisysdemo.so

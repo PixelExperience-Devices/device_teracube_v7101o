@@ -45,3 +45,15 @@ prebuilt_etc {
     src: "etc/ueventd.mt6771.rc",
     vendor: true,
 }
+
+sh_binary {
+    name: "partition_permission.sh",
+    src: "bin/partition_permission.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "throttle.sh",
+    src: "bin/throttle.sh",
+    vendor: true,
+}

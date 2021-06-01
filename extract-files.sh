@@ -56,28 +56,28 @@ fi
 function blob_fixup() {
     case "${1}" in
         bin/vtservice)
-            patchelf --add-needed libshim_vtservice.so ${2}
+            "${PATCHELF}" --add-needed "libshim_vtservice.so" "${2}"
             ;;
         lib/libshowlogo.so)
-            patchelf --add-needed libshim_showlogo.so ${2}
+            "${PATCHELF}" --add-needed "libshim_showlogo.so" "${2}"
             ;;
         vendor/bin/hw/android.hardware.wifi@1.0-service-lazy-mediatek)
-            patchelf --add-needed libcompiler_rt.so ${2}
-            patchelf --replace-needed libwifi-hal.so libwifi-hal-mtk.so ${2}
+            "${PATCHELF}" --add-needed "libcompiler_rt.so" "${2}"
+            "${PATCHELF}" --replace-needed "libwifi-hal.so" "libwifi-hal-mtk.so" "${2}"
             ;;
         vendor/bin/hw/hostapd)
-            patchelf --add-needed libcompiler_rt.so ${2}
+            "${PATCHELF}" --add-needed "libcompiler_rt.so" "${2}"
             ;;
         vendor/bin/hw/wpa_supplicant)
-            patchelf --add-needed libcompiler_rt.so ${2}
+            "${PATCHELF}" --add-needed "libcompiler_rt.so" "${2}"
             ;;
         vendor/etc/init/init.cccimdinit.rc)
-            sed -i -e 's/disabled/#disabled/g' ${2}
-            sed -i -e 's/on property/#on property/g' ${2}
-            sed -i -e 's/start/#start/g' ${2}
+            sed -i -e 's/disabled/#disabled/g' "${2}"
+            sed -i -e 's/on property/#on property/g' "${2}"
+            sed -i -e 's/start/#start/g' "${2}"
             ;;
         vendor/lib/hw/audio.primary.mt6771.so)
-            patchelf --replace-needed libmedia_helper.so libmedia_helper-v29.so ${2}
+            "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v29.so" "${2}"
             ;;
     esac
 }

@@ -780,11 +780,6 @@ vendor/lib/libjpeg-alpha_vendor.so
 vendor/lib64/libjpeg-alpha-oal_vendor.so
 vendor/lib64/libjpeg-alpha_vendor.so
 
-# Kernel Power Off Charging (KPOC)
-bin/kpoc_charger
-etc/init/kpoc_charger.rc
-lib/libshowlogo.so
-
 # Keymaster
 vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service
 vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc

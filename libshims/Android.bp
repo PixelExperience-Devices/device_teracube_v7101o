@@ -2,9 +2,3 @@ cc_library {
     name: "libshim_vtservice",
     srcs: ["vtservice/libshim_vtservice.cpp"],
 }
-
-cc_library_shared {
-    name: "libshim_showlogo",
-    shared_libs: ["libgui"],
-    srcs: ["showlogo/libshim_showlogo.cpp"],
-}

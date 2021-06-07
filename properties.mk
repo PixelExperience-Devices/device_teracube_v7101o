@@ -99,7 +99,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lmk.kill_heaviest_task=true \
     ro.lmk.kill_timeout_ms=100 \
-    ro.lmk.use_minfree_levels=true
+    ro.lmk.use_minfree_levels=true \
+    persist.vendor.duraspeed.support=1 \
+    persist.vendor.duraspeed.app.on=1 \
+    persist.vendor.heavy.loading.support=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -121,7 +124,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.mediatek.platform=MT6771 \
     ro.vendor.mtk_config_max_dram_size=0x800000000 \
     ro.vendor.mediatek.version.branch=alps-mp-q0.mp1 \
-    ro.vendor.mediatek.version.release=alps-mp-q0.mp1-V9.13.1_lentek.q0mp1.k61v1.64.bsp_P1 \
+    ro.vendor.mediatek.version.release=alps-mp-q0.mp1-V9.13.1_teracube.q0mp1.t1_v1001_bsp \
     ro.vendor.mtk_wappush_support=1 \
     ro.vendor.mtk_fd_support=1 \
     ro.vendor.mtk_exchange_support=1

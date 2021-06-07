@@ -1,4 +1,4 @@
-# Device proprietary files - from Teracube A10_BETA-1, unless pinned
+# Device proprietary files - from full_v7101o-user 10 QP1A.190711.020 q0mp1t1v1001bsp release-keys, unless pinned
 
 # AEE
 vendor/lib/libdirect-coredump.so
@@ -407,7 +407,6 @@ vendor/lib64/libcamdrv_imem.so
 vendor/lib64/libcamdrv_isp.so
 vendor/lib64/libcamdrv_tuning_mgr.so
 vendor/lib64/libcamdrv_twin.so
-vendor/lib64/libcameracustom.eis.so
 vendor/lib64/libcameracustom.plugin.so
 vendor/lib64/libcameracustom.so
 vendor/lib64/libCamera_s5k2l8mipiraw_AutoHDR_Capture.so
@@ -609,7 +608,6 @@ vendor/lib64/libfeature.stereo.provider.so
 vendor/lib64/libfeature.vsdof.hal.so
 vendor/lib64/libfeatureiodrv_mem.so
 vendor/lib64/libfeature_3dnr.so
-vendor/lib64/libfeature_eis.so
 vendor/lib64/libfeature_fsc.so
 vendor/lib64/libfeature_lmv.so
 vendor/lib64/libfeature_rss.so
@@ -1004,7 +1002,6 @@ vendor/lib/hw/vendor.mediatek.hardware.power@2.1-impl.so
 vendor/lib/vendor.mediatek.hardware.power@2.0.so
 vendor/lib/vendor.mediatek.hardware.power@2.1.so
 vendor/lib64/hw/vendor.mediatek.hardware.power@2.1-impl.so
-vendor/lib64/vendor.mediatek.hardware.power@1.1.so
 vendor/lib64/vendor.mediatek.hardware.power@2.0.so
 vendor/lib64/vendor.mediatek.hardware.power@2.1.so
 

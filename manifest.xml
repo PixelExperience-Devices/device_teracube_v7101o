@@ -296,21 +296,6 @@
         <fqname>@1.2::ISupplicant/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.goodix.hardware.biometrics.fingerprint</name>
-        <transport>hwbinder</transport>
-        <version>2.1</version>
-        <interface>
-            <name>IGoodixFingerprintDaemon</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IGoodixFingerprintDaemonExt</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.1::IGoodixFingerprintDaemon/default</fqname>
-        <fqname>@2.1::IGoodixFingerprintDaemonExt/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.mediatek.hardware.apuware.utils</name>
         <transport>hwbinder</transport>
         <version>1.0</version>

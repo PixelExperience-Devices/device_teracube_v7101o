@@ -115,8 +115,8 @@ Only the three quirks included above are recognized at this point:
       </MediaCodec>
       <MediaCodec name="c2.android.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
           <Limit name="measured-frame-rate-320x180" range="675-1484" />
-          <Limit name="measured-frame-rate-640x360" range="263-578" />
-          <Limit name="measured-frame-rate-1280x720" range="122-269" />
+          <Limit name="measured-frame-rate-640x360" range="85-187" />
+          <Limit name="measured-frame-rate-1280x720" range="50-116" />
       </MediaCodec>
         <MediaCodec name="c2.android.avc.decoder" type="video/avc" update="true">
             <Limit name="measured-frame-rate-320x240" range="225-495" />

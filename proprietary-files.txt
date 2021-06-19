@@ -718,7 +718,6 @@ vendor/lib/vendor.mediatek.hardware.pq@2.1.so
 vendor/lib/vendor.mediatek.hardware.pq@2.2.so
 vendor/lib/vendor.mediatek.hardware.pq@2.3.so
 vendor/lib64/hw/gralloc.mt6771.so
-vendor/lib64/hw/hwcomposer.mt6771.so
 vendor/lib64/hw/memtrack.mt6771.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq@2.3-impl.so
 vendor/lib64/vendor.mediatek.hardware.gpu@1.0.so
@@ -726,6 +725,9 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.0.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.1.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.2.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.3.so
+
+# Display (Hardware) - from begonia-user 10 QP1A.190711.020 V12.0.8.0.QGGMIXM release-keys
+vendor/lib64/hw/hwcomposer.mt6785.so:vendor/lib64/hw/hwcomposer.mt6771.so|2abfd1cf141d63d14f3e60053f5fc9199a7a626b
 
 # Engineering
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.0.so
